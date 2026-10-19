@@ -15,3 +15,12 @@ ALTER TABLE vacc ADD CONSTRAINT vacc1_fk
     FOREIGN KEY (dog_id) REFERENCES dog(id);
 ALTER TABLE vacc ADD CONSTRAINT vacc2_fk
     FOREIGN KEY (doctor_id) REFERENCES person(id);
+-----
+-- 1,
+ALTER TABLE dog
+  ADD CONSTRAINT dog_reg_no_uk UNIQUE (registration_number);
+
+-- 2,
+ALTER TABLE dog
+  ADD CONSTRAINT dog_reg_no_ck CHECK (LENGTH(registration_number) >= 5);
+-----
